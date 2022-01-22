@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from Conecction import get_database
+from conexion import get_database
 import json
 
 app = FastAPI()
