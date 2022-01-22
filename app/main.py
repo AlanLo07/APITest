@@ -1,8 +1,20 @@
 from fastapi import FastAPI
-from conexion import get_database
 import json
 
 app = FastAPI()
+
+
+def get_database():
+    import pymongo
+
+    # Provide the mongodb atlas url to connect python to mongodb using pymongo
+    # CONNECTION_STRING = "mongodb+srv://alanlo:<Mafer&Alan7>@cluster0.yd92l.mongodb.net/Cars?retryWrites=true&w=majority"
+
+    # client = MongoClient(CONNECTION_STRING)
+    client = pymongo.MongoClient('mongodb://mongo:27017/todos')
+
+    return client["Cars"]
+
 dbname = get_database()
 
 @app.get("/")
