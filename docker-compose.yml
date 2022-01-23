@@ -3,7 +3,9 @@ version: "3.7"
 services:
   api:
     container_name: python-todos-api
-    image: python
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - MONGO_URI=mongodb://mongo:27017/todos
       - APP_PORT=5000
