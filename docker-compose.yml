@@ -14,7 +14,6 @@ services:
     volumes:
       - .:/api
     ports: ["8090:8090"]
-    tty: true
 
   mongo:
     container_name: mongo-db
